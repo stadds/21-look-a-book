@@ -60,7 +60,8 @@ app.use(
 )
 
 // Serve up static assets (usually on heroku)
-if (PROD_ENV) app.use(express.static(path.join(__dirname, "client/build")));
+// if (PROD_ENV) app.use(express.static(path.join(__dirname, "client/build")));
+if (PROD_ENV) app.use(express.static("client/build"));
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
