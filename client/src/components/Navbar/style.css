@@ -1,0 +1,15 @@
+@import url("../masterstyle.css");
+
+header {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-family: var(--headerfont);
+}
+
+nav {
+  background-color: var(--secondary);
+}
+
+nav a {
+  font-weight: bold;
+}
