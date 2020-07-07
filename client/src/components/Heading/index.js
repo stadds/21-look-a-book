@@ -1,13 +1,13 @@
 import React from "react";
 // import "./style.css";
 
-function Heading({ level, title, hasHR }) {
+function Heading({ level, hasHR, children }) {
   const lvl = parseInt(level, 10);
 
   if (lvl === 1) {
     return (
       <div>
-        <h1>{title}</h1>
+        <h1>{children}</h1>
         {hasHR ? <hr></hr> : ""}
       </div>
     );
@@ -15,7 +15,7 @@ function Heading({ level, title, hasHR }) {
   if (lvl === 2) {
     return (
       <div>
-        <h2>{title}</h2>
+        <h2>{children}</h2>
         {hasHR ? <hr></hr> : ""}
       </div>
     );
@@ -24,7 +24,7 @@ function Heading({ level, title, hasHR }) {
   if (lvl === 3) {
     return (
       <div>
-        <h3>{title}</h3>
+        <h3>{children}</h3>
         {hasHR ? <hr></hr> : ""}
       </div>
     );
@@ -33,7 +33,7 @@ function Heading({ level, title, hasHR }) {
   if (lvl === 4) {
     return (
       <div>
-        <h4>{title}</h4>
+        <h4>{children}</h4>
         {hasHR ? <hr></hr> : ""}
       </div>
     );
@@ -42,7 +42,7 @@ function Heading({ level, title, hasHR }) {
   if (lvl === 5) {
     return (
       <div>
-        <h5>{title}</h5>
+        <h5>{children}</h5>
         {hasHR ? <hr></hr> : ""}
       </div>
     );
@@ -51,7 +51,7 @@ function Heading({ level, title, hasHR }) {
   if (lvl === 6) {
     return (
       <div>
-        <h6>{title}</h6>
+        <h6>{children}</h6>
         {hasHR ? <hr></hr> : ""}
       </div>
     );

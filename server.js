@@ -67,7 +67,8 @@ if (PROD_ENV) app.use(express.static("client/build"));
 //   app.use(express.static("client/build"));
 // }
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
+app.use(require("./server/routes/books-routes"));
 
 
 // Send every request to the React app

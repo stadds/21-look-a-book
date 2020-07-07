@@ -1,7 +1,8 @@
 import axios from "axios";
-require('dotenv').config();
-const {BOOK_APIKEY} = process.env;
+
 
 export default {
-
+    getSearch: (search) => {
+        return axios.get("/api/books/search/" + search);
+    }
 };

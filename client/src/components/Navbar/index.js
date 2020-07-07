@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import "./style.css";
 
-function NavBar() {
+function Navbar() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -55,4 +55,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;

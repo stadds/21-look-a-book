@@ -6,31 +6,31 @@ function ResultCard({
   authors,
   image,
   link,
-  rightBtn,
+  rightBtnLabel,
   rightBtnClick,
   disabled,
 }) {
   return (
-    <div className="card">
+    <div className="card mb-4">
       <div className="card-header">
         <div className="d-flex">
           <h3 className="card-title flex-grow-1">{title}</h3>
-          <a className="btn btn-info mx-2" target="_blank" href={link}>
+          <a className="btn btn-info mx-2" target="_blank" rel="noopener noreferrer" href={link}>
             View
           </a>
           <button className="btn btn-success" disabled={disabled} onClick={rightBtnClick}>
-            {rightBtn}
+            {rightBtnLabel}
           </button>
         </div>
         <p className="text-muted">Author(s):{authors}</p>
       </div>
-      <div class="row no-gutters mb-2">
-        <div class="col-md-4">
-          <img src={image} class="card-img" alt={`${title} book cover`} />
+      <div className="row no-gutters mb-2">
+        <div className="col-md-4">
+          <img src={image} className="card-img" alt={`${title} book cover`} />
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <p class="card-text">{description}</p>
+        <div className="col-md-8">
+          <div className="card-body">
+            <p className="card-text">{description}</p>
           </div>
         </div>
       </div>

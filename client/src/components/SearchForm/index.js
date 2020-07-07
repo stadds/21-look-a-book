@@ -10,28 +10,29 @@ function SearchForm({
   btnLabel,
 }) {
   return (
-    <form>
-      <div className="form-group">
-        <label for="bookInput">{label}</label>
-        <input
-          className="form-control"
-          id="bookInput"
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          onChange={handleInputChange}
-        ></input>
+    <div className="clearfix">
+      <form>
+        <div className="form-group">
+          <label htmlFor="bookInput">{label}</label>
+          <input
+            className="form-control mb-2"
+            id="bookInput"
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            onChange={handleInputChange}
+          ></input>
+        </div>
         <button
           type="submit"
-          className="btn btn-primary"
-          style={{ float: "right", marginBottom: 10 }}
+          className="btn btn-primary float-right"
           onClick={handleFormSubmit}
           disabled={disabled}
         >
-          {btnLabel}
+          SEARCH
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
