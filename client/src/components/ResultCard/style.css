@@ -1,0 +1,34 @@
+@import url("../masterstyle.css");
+
+/* .search-form{
+    background-color: var(--fourth);
+    color: black;
+} */
+
+
+.btn-view{
+    background-color: var(--secondary);
+    color: black;
+}
+
+.btn-view:hover, .btn-view:focus, .btn-view:active{
+    background-color: var(--sLight);
+    color: var(--sDark);   
+}
+
+
+.btn-one{
+    background-color: var(--pDark);
+    color: white;
+}
+
+.btn-one:hover, .btn-one:focus, .btn-one:active{
+    background-color: var(--pLight);
+    color: black;   
+    /* border-width: 3px; */
+    /* border-color: var(--pDark); */
+}
+
+.card-header{
+    background-color: var(--sDark);
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function SearchForm({
   label,
@@ -25,7 +26,7 @@ function SearchForm({
         </div>
         <button
           type="submit"
-          className="btn btn-primary float-right"
+          className="btn btn-search float-right"
           onClick={handleFormSubmit}
           disabled={disabled}
         >

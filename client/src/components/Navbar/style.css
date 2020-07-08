@@ -4,12 +4,15 @@ header {
   margin-bottom: 1em;
   font-size: 1.5em;
   font-family: var(--headerfont);
+  color: white;
 }
 
 nav {
-  background-color: var(--secondary);
+  background-color: var(--pDark);
+  color: white;
 }
 
 nav a {
   font-weight: bold;
+  color: white;
 }

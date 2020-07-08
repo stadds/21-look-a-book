@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 
 function Container({ conSize, padding, margin, border, other, children }) {
   return (

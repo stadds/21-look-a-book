@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./style.css";
+import "./style.css";
 
 function Navbar() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div className="container">
           <Link className="navbar-brand pr-2" to="/">
             Look-A-Book!

@@ -1,0 +1,18 @@
+@import url("../masterstyle.css");
+
+/* .search-form{
+    background-color: var(--fourth);
+    color: black;
+} */
+
+
+.btn-search{
+    background-color: var(--secondary);
+    color: black;
+}
+
+.btn-search:hover, .btn-search:focus, .btn-search:active{
+    background-color: var(--sDark);
+    color: white;   
+}
+

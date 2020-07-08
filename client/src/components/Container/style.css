@@ -1,0 +1,11 @@
+@import url("../masterstyle.css");
+
+.search-form{
+    background-color: var(--fourth);
+    color: black;
+}
+
+
+.btn-primary{
+
+}

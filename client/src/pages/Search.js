@@ -4,6 +4,7 @@ import Heading from "../components/Heading";
 import SearchForm from "../components/SearchForm";
 import ResultCard from "../components/ResultCard";
 import API from "../utils/API";
+import MainWrapper from "../components/MainWrapper";
 const INP_TITLE = "title";
 const placeholderIMG =
   "https://via.placeholder.com/150/0000FF/808080%20?text=%22Book%20Cover%22";
@@ -68,14 +69,14 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <MainWrapper>
       <Container
         margin="mb-4"
         padding="p-2"
-        border="border rounded-sm"
+        border="rounded-sm"
         other="shadow-sm"
       >
-        <Heading level={2} hasHR>
+        <Heading level={2} addClass="headOne p-2 mb-2 border rounded-sm">
           Book Search
         </Heading>
         <SearchForm
@@ -86,8 +87,8 @@ const Search = () => {
           handleFormSubmit={handleFormSubmit}
         ></SearchForm>
       </Container>
-      <Container>
-        <Heading level="2" hasHR={true}>
+      <Container border="shadow-sm" margin="mb-2" padding="p-2">
+        <Heading level="2" hasHR addClass="headOne p-1 mb-2">
           Results
         </Heading>
         {results.length ? (
@@ -112,10 +113,10 @@ const Search = () => {
             );
           })
         ) : (
-          <h3 className="text-muted text-center">No Results</h3>
+          <h3 className="text-muted text-center pb-2">No Results</h3>
         )}
       </Container>
-    </div>
+    </MainWrapper>
   );
 };
 

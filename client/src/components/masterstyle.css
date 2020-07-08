@@ -1,0 +1,31 @@
+:root {
+    /* font-size: ; */
+    --primary: #1b6ca8;
+    --secondary: #ffd3e1;
+    --third: #0a97b0;
+    --fourth: #fce8d5;
+    /* --fifth: #b7ef; */
+    --boxshadow: rgba(0, 0, 0, 0.4);
+    --bodyfont: 'Noto Sans JP', sans-serif;
+    --headerfont:'Fondamento', cursive;
+    --pLight: #5b9ada;
+    --pDark: #004279;
+    --sLight: #ffffff;
+    --sDark: #cba2af;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    height: inherit;
+    padding-top: 30px;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: var(--bodyfont);
+    /* background-color: var(--fourth); */
+    color: black;
+    margin: 0;
+  }
+  

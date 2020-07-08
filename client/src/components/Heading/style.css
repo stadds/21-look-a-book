@@ -1,0 +1,11 @@
+@import url("../masterstyle.css");
+
+.headOne {
+  background-color: var(--pLight);
+  color: black;
+}
+
+.headTwo{
+    background-color: var(--sDark);
+    color: white;
+}
