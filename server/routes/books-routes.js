@@ -7,9 +7,9 @@ const KEY = process.env.BOOK_APIKEY;
 const getSearched = async (search) => {
   console.log(`in getSearched: ${search}`);
   //   console.log(KEY);
-  console.log(
-    `https://www.googleapis.com/books/v1/volumes?q="${search}"&key=${KEY}`
-  );
+//   console.log(
+//     `https://www.googleapis.com/books/v1/volumes?q="${search}"&key=${KEY}`
+//   );
 
   return await axios.get(
     `https://www.googleapis.com/books/v1/volumes?q="${search}"&key=${KEY}`
