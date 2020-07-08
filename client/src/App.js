@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path={["/", "/search"]}>
               <Search></Search>
             </Route>
-            <Route exact path={["/books"]}>
+            <Route exact path={["/saved", "/books/:id"]}>
               <Saved></Saved>
             </Route>
           </Switch>

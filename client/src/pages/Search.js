@@ -5,10 +5,16 @@ import SearchForm from "../components/SearchForm";
 import ResultCard from "../components/ResultCard";
 import API from "../utils/API";
 const INP_TITLE = "title";
+const placeholderIMG =
+  "https://via.placeholder.com/150/0000FF/808080%20?text=%22Book%20Cover%22";
 
 const Search = () => {
   const [formObject, setFormObject] = useState({});
   const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    document.title = "Search Books";
+  }, []);
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -22,9 +28,9 @@ const Search = () => {
       console.log(formObject[INP_TITLE]);
       API.getSearch(formObject[INP_TITLE])
         .then((res) => {
-          let {data} = res;
+          let { data } = res;
           // console.log(`TESTING\n${data}`);
-          setResults(data.items)
+          setResults(data.items);
         })
         .catch((err) => console.error(err));
     }
@@ -32,8 +38,33 @@ const Search = () => {
 
   function saveResult(index) {
     console.log(`Save result: ${index}`);
-    let test = JSON.stringify(results[index]);
-    console.log(`results[index] = ${test}`)
+    let { volumeInfo } = results[index];
+
+    let saveBook = {
+      title: volumeInfo.title,
+      authors: volumeInfo.authors,
+      description: volumeInfo.description,
+      image: volumeInfo.imageLinks
+        ? volumeInfo.imageLinks.smallThumbnail
+        : placeholderIMG,
+      link: volumeInfo.canonicalVolumeLink,
+      categories: volumeInfo.categories,
+      publishedDate: volumeInfo.publishedDate,
+      pageCount: volumeInfo.pageCount,
+      averageRating: volumeInfo.averageRating,
+    };
+
+    API.saveBook(saveBook)
+      .then((res) => {
+        let { data } = res;
+        console.log("Success: " + data);
+        let newResults = [...results];
+        let newItem = { ...results[index] };
+        newItem.disabled = "disabled";
+        newResults[index] = newItem;
+        setResults(newResults);
+      })
+      .catch((err) => console.error(err));
   }
 
   return (
@@ -59,22 +90,30 @@ const Search = () => {
         <Heading level="2" hasHR={true}>
           Results
         </Heading>
-        {results.map((result, index) => {
-          let { volumeInfo } = result;
-          return (
-            <ResultCard
-              key={index}
-              title={volumeInfo.title}
-              authors={volumeInfo.authors.join()}
-              description={volumeInfo.description}
-              image={volumeInfo.imageLinks.smallThumbnail}
-              link={volumeInfo.canonicalVolumeLink}
-              rightBtnLabel="Save"
-              rightBtnClick={() => saveResult(index)}
-              // disabled={}
-            ></ResultCard>
-          );
-        })}
+        {results.length ? (
+          results.map((result, index) => {
+            let { volumeInfo, disabled } = result;
+            return (
+              <ResultCard
+                key={index}
+                title={volumeInfo.title}
+                authors={volumeInfo.authors ? volumeInfo.authors.join() : "N/A"}
+                description={volumeInfo.description}
+                image={
+                  volumeInfo.imageLinks
+                    ? volumeInfo.imageLinks.smallThumbnail
+                    : placeholderIMG
+                }
+                link={volumeInfo.canonicalVolumeLink}
+                rightBtnLabel={disabled ? "Saved!" : "Save"}
+                rightBtnClick={() => saveResult(index)}
+                disabled={disabled ? disabled : ""}
+              ></ResultCard>
+            );
+          })
+        ) : (
+          <h3 className="text-muted text-center">No Results</h3>
+        )}
       </Container>
     </div>
   );
